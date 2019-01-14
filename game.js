@@ -34,7 +34,11 @@ var background2 = new Background(500, 0, 500, 640, 2);
 
 document.addEventListener('keydown', function (event) {
     if (event.keyCode === 32 && pressed === false) {
-        player.moveUp(3); 
+        player.moveUp(4); 
+        pressed = true; 
+    }
+    if (event.keyCode === 81 && pressed === false) {
+        player.moveUp(6); 
         pressed = true; 
     }
 

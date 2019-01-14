@@ -30,7 +30,6 @@ Bonus
 * Game class - keep track of score
 * Seaweed class - logic for collision
 * Background class - two background objects so appears continuous
-* Sky class - to handle logic of not being able to go outside water
 
 
 ## Implementation Timeline
