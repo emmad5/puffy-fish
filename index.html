@@ -1,0 +1,38 @@
+<html>
+<header>
+    <title>Game</title>
+    <style>
+        body {
+            background: rgb(9, 71, 92);
+        }
+        
+        #game-canvas {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 32px;
+            box-shadow: 0px 0px 32px rgba(255, 255, 255, 0.5);
+        }
+
+        img {
+            display: none;
+        }
+        
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+    <img src="fish.png" id="fish"> 
+    <img src="background.png" id="background"> 
+    <img src="seaweed.png" id="block"> 
+    <img src="rod5.png" id="rod"> 
+</header>
+
+<body>
+    <canvas width="500" height="640" id="game-canvas"></canvas>
+    <script src="player.js"></script>
+    <script src="pipe.js"></script>
+    <script src="background.js"></script>
+    <script src="game.js"></script>
+</body> 
+
+</html>
