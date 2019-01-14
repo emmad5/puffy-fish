@@ -1,6 +1,8 @@
 <html>
 <header>
-    <title>Game</title>
+    <title>Puff</title>
+    <h1>Welcome to Puffy Fish</h1>
+    <p>Press space bar to jump and esc to pause</p>
     <style>
         body {
             background: rgb(9, 71, 92);
@@ -18,6 +20,16 @@
         img {
             display: none;
         }
+        h1 {
+            color: lightblue;
+            font-family: Caveat;
+        }
+        p {
+            color: lightblue;
+            font-family: Caveat;
+            font-size: 24px;
+
+        }
         
     </style>
     <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
@@ -26,13 +38,13 @@
     <img src="seaweed2.png" id="block"> 
     <img src="rod5.png" id="rod"> 
 </header>
-
 <body>
     <canvas width="500" height="640" id="game-canvas"></canvas>
     <script src="player.js"></script>
     <script src="pipe.js"></script>
     <script src="background.js"></script>
     <script src="game.js"></script>
+    
 </body> 
 
 </html>

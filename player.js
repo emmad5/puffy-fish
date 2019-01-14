@@ -16,8 +16,8 @@ Fish.prototype.draw = function () {
 Fish.prototype.update = function () {
     this.fallSpeed += 0.2; 
     this.y += this.fallSpeed + this.ySpeed; 
-    if (this.x + this.w >= pipeTop.x && this.x <= pipeTop.x + pipeTop.w) {
-        if (this.y + this.h >= pipeBottom.y || this.y <= (pipeTop.y + pipeTop.h - 25)) {
+    if (this.x + this.w >= (pipeBottom.x + 30) && this.x <= pipeTop.x + pipeTop.w) {
+        if (this.y + this.h >= (pipeBottom.y + 30)|| this.y <= (pipeTop.y + pipeTop.h - 25)) {
             isGameOver = true;
         } else {
             if (!this.scored) {

@@ -70,6 +70,7 @@ function gameLoop() {
         background1.update();
         background2.update();
     }
+  
 
 
     ctx.clearRect(0, 0, 500, 640);
