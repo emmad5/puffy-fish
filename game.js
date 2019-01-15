@@ -7,6 +7,7 @@ ctx.lineWidth = 2;
 
 
 var fish = document.getElementById('fish');
+var fish2 = document.getElementById('fish2');
 var background = document.getElementById('background');
 var block = document.getElementById('block');
 var rod = document.getElementById('rod');
@@ -60,7 +61,8 @@ document.addEventListener('keyup', function (event) {
 }, false);
 
 function gameLoop() {
-
+ 
+  
     if (!isPaused && !isGameOver) {
         player.update();
         hook.update();

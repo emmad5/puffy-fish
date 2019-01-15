@@ -6,10 +6,12 @@ function Fish(x, y, w, h) {
     this.fallSpeed = 0;
     this.ySpeed = 0;
     this.scored = false;
+    this.frame = 0;
 }
 
 Fish.prototype.draw = function () {
-    ctx.drawImage(fish, this.x, this.y, this.w, this.h);
+    var image = this.frame == 0 ? fish : fish2;
+    ctx.drawImage(image, this.x, this.y, this.w, this.h);
 }
 
 Fish.prototype.update = function () {
@@ -34,6 +36,11 @@ Fish.prototype.update = function () {
     }
     if (hook.x >= 360) {
         this.scored = false;
+    }
+    if (this.fallSpeed <= 3) {
+        this.frame = 1;
+    } else {
+        this.frame = 0;
     }
 }
 
