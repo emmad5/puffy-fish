@@ -15,7 +15,12 @@ Fish.prototype.draw = function () {
 }
 
 Fish.prototype.update = function () {
-    this.fallSpeed += 0.2; 
+    if (isGameOver) {
+        this.fallSpeed += 0.08; 
+    }
+    else {
+        this.fallSpeed += 0.2; 
+    }
     this.y += this.fallSpeed + this.ySpeed; 
     if ((this.x + (this.w / 2)) > seaweed.x && this.x < (seaweed.x + (seaweed.w / 3 ))) {
         if (this.y + this.h >= (seaweed.y + 20) || this.y <= (hook.y + hook.h - 25)) {
@@ -48,15 +53,20 @@ Fish.prototype.moveUp = function (speed) {
     this.fallSpeed = 0;
     this.ySpeed = -speed;
 }
+
 Fish.prototype.fall = function (speed) {
     ctx.clearRect(0, 0, 500, 640);
     background1.draw();
     background2.draw();
-    player.drawImageRot(fish, player.x, player.y, 80, 70, 180)
+    player.drawImageRot(fish3, player.x, player.y, 80, 70, 180)
     seaweed.draw();
     hook.draw();
     this.fallSpeed = 0;
-    this.ySpeed = speed;
+    this.ySpeed = -speed;
+    if (player.y <= 150) {
+        this.ySpeed = 0;
+        this.fallSpeed = 0;
+    }
 }
 
 Fish.prototype.drawImageRot = function (img, x, y, width, height, deg) {

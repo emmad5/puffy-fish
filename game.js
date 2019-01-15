@@ -8,6 +8,7 @@ ctx.lineWidth = 2;
 
 var fish = document.getElementById('fish');
 var fish2 = document.getElementById('fish2');
+var fish3 = document.getElementById('fish3');
 var background = document.getElementById('background');
 var block = document.getElementById('block');
 var rod = document.getElementById('rod');
@@ -90,6 +91,7 @@ function gameLoop() {
     } else if (isGameOver) {
         player.fall(5)
         player.update()
+        
         drawTint(0, 0, 500, 640);
         drawText('Game Over', 250, 310);
         drawText('your score: ' + score, 250, 380);
