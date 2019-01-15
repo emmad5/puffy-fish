@@ -12,7 +12,7 @@ function Fish(x, y, w, h) {
 Fish.prototype.draw = function () {
     var image = this.frame == 0 ? fish : fish2;
     ctx.drawImage(image, this.x, this.y, this.w, this.h);
-}
+};
 
 Fish.prototype.update = function () {
     if (isGameOver) {
@@ -47,18 +47,18 @@ Fish.prototype.update = function () {
     } else {
         this.frame = 0;
     }
-}
+};
 
 Fish.prototype.moveUp = function (speed) {
     this.fallSpeed = 0;
     this.ySpeed = -speed;
-}
+};
 
 Fish.prototype.fall = function (speed) {
     ctx.clearRect(0, 0, 500, 640);
     background1.draw();
     background2.draw();
-    player.drawImageRot(fish3, player.x, player.y, 80, 70, 180)
+    player.drawImageRot(fish3, player.x, player.y, 80, 70, 180);
     seaweed.draw();
     hook.draw();
     this.fallSpeed = 0;
@@ -67,7 +67,7 @@ Fish.prototype.fall = function (speed) {
         this.ySpeed = 0;
         this.fallSpeed = 0;
     }
-}
+};
 
 Fish.prototype.drawImageRot = function (img, x, y, width, height, deg) {
     var rad = deg * Math.PI / 180;
@@ -76,4 +76,4 @@ Fish.prototype.drawImageRot = function (img, x, y, width, height, deg) {
     ctx.drawImage(img, width / 2 * (-1), height / 2 * (-1), width, height);
     ctx.rotate(rad * (-1));
     ctx.translate((x + width / 2) * (-1), (y + height / 2) * (-1));
-}
+};
