@@ -15,8 +15,8 @@ Fish.prototype.draw = function () {
 Fish.prototype.update = function () {
     this.fallSpeed += 0.2; 
     this.y += this.fallSpeed + this.ySpeed; 
-    if (this.x + this.w > seaweed.x && this.x < seaweed.x + seaweed.w) {
-        if (this.y + this.h >= (seaweed.y) || this.y <= (hook.y + hook.h - 40)) {
+    if ((this.x + (this.w / 2)) > seaweed.x && this.x < (seaweed.x + (seaweed.w / 2 ))) {
+        if (this.y + this.h >= (seaweed.y) || this.y <= (hook.y + hook.h - 30)) {
              isGameOver = true;
         
         } else {
@@ -43,4 +43,8 @@ Fish.prototype.update = function () {
 Fish.prototype.moveUp = function (speed) {
     this.fallSpeed = 0;
     this.ySpeed = -speed;
+}
+Fish.prototype.fall = function (speed) {
+    this.fallSpeed = 0;
+    this.ySpeed = speed;
 }

@@ -1,6 +1,6 @@
 var canvas = document.getElementById('game-canvas');
 var ctx = canvas.getContext('2d');
-ctx.font = 'bold 50px Caveat';
+ctx.font = 'bold 44px Caveat';
 ctx.fillStyle = 'white';
 ctx.textAlign = 'center';
 ctx.lineWidth = 2;
@@ -88,6 +88,9 @@ function gameLoop() {
         drawTint(0, 0, 500, 640);
         drawText('Game Over', 250, 310);
         drawText('your score: ' + score, 250, 380);
+        drawText('Hit Enter to play again', 250, 450);
+        player.fall(5)
+        player.update()
     } else {       
         drawText(score, 180, 52);
     }
