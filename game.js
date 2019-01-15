@@ -62,8 +62,6 @@ document.addEventListener('keyup', function (event) {
 }, false);
 
 function gameLoop() {
- 
-  
     if (!isPaused && !isGameOver) {
         player.update();
         hook.update();
@@ -71,9 +69,6 @@ function gameLoop() {
         background1.update();
         background2.update();
     }
-  
-
-
     ctx.clearRect(0, 0, 500, 640);
     background1.draw();
     background2.draw();
@@ -89,7 +84,7 @@ function gameLoop() {
             drawText(score, 180, 52);
         }
     } else if (isGameOver) {
-        player.fall(5)
+        player.fall(3)
         player.update()
         
         drawTint(0, 0, 500, 640);
