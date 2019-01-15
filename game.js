@@ -34,12 +34,22 @@ var seaweed = new Pipe(360, 480, 80, 300, 2, block);
 var background1 = new Background(0, 0, 500, 640, 2);
 var background2 = new Background(500, 0, 500, 640, 2);
 var coin1 = new Coin(500, 500, 40, 40, 2);
+var mysound = new Audio("tynext2.mp3")
 
 
 document.addEventListener('keydown', function (event) {
     if (event.keyCode === 32 && pressed === false) {
         player.moveUp(5); 
         pressed = true; 
+    }
+    if (event.keyCode === 69) {
+        mysound.volume = 0.5
+        mysound.play()
+ 
+    }
+    if (event.keyCode === 82) {
+        mysound.pause()
+ 
     }
  
 

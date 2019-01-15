@@ -2,7 +2,9 @@
 <header>
     <title>Puffy Fish</title>
     <h1>Welcome to Puffy Fish</h1>
-    <p>Press space bar to jump and esc to pause</p>
+    <div>Press <span class='color'>space bar</span> to jump and <span class='color'>esc</span> to pause
+        <br/>
+    Press <span class='color'>e</span> to start music and <span class='color'>r</span> to pause music</div>
     <p>About the developer: <a href="https://github.com/emmad5">Emma Deas</a>
     <br />
     <a href="https://github.com/emmad5">GitHub</a>
@@ -37,6 +39,10 @@
             font-family: Caveat;
             font-size: 22px;
         }
+        .color {
+            /* color: rgba(255, 125, 78, 0.856); */
+            color: white;
+        }
         a:hover {
             color: rgb(48, 125, 151);
         }
@@ -46,11 +52,17 @@
             font-size: 24px;
 
         }
+        div {
+            color: lightblue;
+            font-family: Caveat;
+            font-size: 24px;
+ 
+        }
         
     </style>
     <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
     <img src="fish.png" id="fish"> 
-    <img src="coin.png" id="coin"> 
+    <img src="coin1.png" id="coin"> 
     <img src="fish_dead.png" id="fish3"> 
     <img src="fish_frame_2.png" id="fish2"> 
     <img src="background.png" id="background"> 

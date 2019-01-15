@@ -4,7 +4,7 @@ function Coin(x, y, w, h, speed) {
     this.w = w;
     this.h = h;
     this.speed = speed;
-    this.isHit = false
+    this.isHit = false;
     
 }
 
@@ -16,6 +16,6 @@ Coin.prototype.update = function () {
     this.x -= this.speed;
     if (this.x + this.w <= 0) {
         this.x = 600;
-        this.y = 320 + (Math.random() * (185 - 50) + 50);
+        this.y = 130 + (Math.random() * (300 + 20) + 20);
     }
 }

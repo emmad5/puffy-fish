@@ -17,7 +17,7 @@ Pipe.prototype.update = function () {
         this.x = 500;
 
         if (this.y <= 320) {
-            this.y = -(Math.random() * (50 - 10) - 10);
+            this.y = -(Math.random() * (50 - 0) - 0);
         
         } else {
             this.y = 320 + (Math.random() * (110 - 50) + 50);
