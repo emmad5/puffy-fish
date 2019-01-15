@@ -6,7 +6,6 @@ function Fish(x, y, w, h) {
     this.fallSpeed = 0;
     this.ySpeed = 0;
     this.scored = false;
-    this.frame = 0; 
 }
 
 Fish.prototype.draw = function () {
@@ -16,9 +15,10 @@ Fish.prototype.draw = function () {
 Fish.prototype.update = function () {
     this.fallSpeed += 0.2; 
     this.y += this.fallSpeed + this.ySpeed; 
-    if (this.x + this.w >= (pipeBottom.x + 30) && this.x <= pipeTop.x + pipeTop.w) {
-        if (this.y + this.h >= (pipeBottom.y + 30)|| this.y <= (pipeTop.y + pipeTop.h - 25)) {
-            isGameOver = true;
+    if (this.x + this.w > seaweed.x && this.x < seaweed.x + seaweed.w) {
+        if (this.y + this.h >= (seaweed.y) || this.y <= (hook.y + hook.h - 40)) {
+             isGameOver = true;
+        
         } else {
             if (!this.scored) {
                 score += 1;
@@ -28,19 +28,15 @@ Fish.prototype.update = function () {
     }
 
 
-    if (this.y >= 600) {
+
+    if (this.y >= 550) {
         isGameOver = true;
     }
-    if (this.y <= 180) {
+    if (this.y <= 150) {
         isGameOver = true;
     }
-    if (pipeTop.x >= 360) {
+    if (hook.x >= 360) {
         this.scored = false;
-    }
-    if (this.fallSpeed <= 1) {
-        this.frame = 1;
-    } else {
-        this.frame = 0;
     }
 }
 

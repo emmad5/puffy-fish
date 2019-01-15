@@ -17,10 +17,10 @@ Pipe.prototype.update = function () {
         this.x = 500;
 
         if (this.y <= 320) {
-            this.y = -(Math.random() * (50 - 0) + 0)
+            this.y = -(Math.random() * (50 - 0) - 10)
         
         } else {
-            this.y = 320 + (Math.random() * (75 - 20) + 20);
+            this.y = 320 + (Math.random() * (150 - 50) + 50);
         }
     }
 }

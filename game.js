@@ -25,22 +25,19 @@ var score = 0;
 var pressed = false; 
 var isPaused = true; 
 var isGameOver = false; 
-var player = new Fish(32, 240, 80, 70);
-var pipeTop = new Pipe(360, 0, 80, 300, 2, rod);
-var pipeBottom = new Pipe(360, 480, 80, 300, 2, block);
+var player = new Fish(32, 340, 80, 70);
+var hook = new Pipe(360, -5, 80, 300, 2, rod);
+var seaweed = new Pipe(360, 480, 80, 300, 2, block);
 var background1 = new Background(0, 0, 500, 640, 2);
 var background2 = new Background(500, 0, 500, 640, 2);
 
 
 document.addEventListener('keydown', function (event) {
     if (event.keyCode === 32 && pressed === false) {
-        player.moveUp(4); 
+        player.moveUp(5); 
         pressed = true; 
     }
-    if (event.keyCode === 81 && pressed === false) {
-        player.moveUp(6); 
-        pressed = true; 
-    }
+ 
 
     if (event.keyCode === 13) {
         if (isGameOver) {
@@ -65,8 +62,8 @@ function gameLoop() {
 
     if (!isPaused && !isGameOver) {
         player.update();
-        pipeTop.update();
-        pipeBottom.update();
+        hook.update();
+        seaweed.update();
         background1.update();
         background2.update();
     }
@@ -77,8 +74,8 @@ function gameLoop() {
     background1.draw();
     background2.draw();
     player.draw();
-    pipeBottom.draw();
-    pipeTop.draw();
+    seaweed.draw();
+    hook.draw();
 
     if (isPaused) {
         drawTint(0, 0, 500, 640);
