@@ -42,6 +42,7 @@ document.addEventListener('keydown', function (event) {
     if (event.keyCode === 13) {
         if (isGameOver) {
             window.location.reload();
+            
         }
 
         if (isPaused) {
@@ -85,12 +86,14 @@ function gameLoop() {
             drawText(score, 180, 52);
         }
     } else if (isGameOver) {
+        player.fall(5)
+        player.update()
         drawTint(0, 0, 500, 640);
         drawText('Game Over', 250, 310);
         drawText('your score: ' + score, 250, 380);
-        drawText('Hit Enter to play again', 250, 450);
-        player.fall(5)
-        player.update()
+        drawText('Hit Enter to replay', 250, 450);
+        
+        
     } else {       
         drawText(score, 180, 52);
     }
