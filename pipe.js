@@ -20,7 +20,7 @@ Pipe.prototype.update = function () {
             this.y = -(Math.random() * (50 - 10) - 10);
         
         } else {
-            this.y = 320 + (Math.random() * (135 - 50) + 50);
+            this.y = 320 + (Math.random() * (110 - 50) + 50);
         }
     }
 }

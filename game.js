@@ -9,6 +9,7 @@ ctx.lineWidth = 2;
 var fish = document.getElementById('fish');
 var fish2 = document.getElementById('fish2');
 var fish3 = document.getElementById('fish3');
+var coin = document.getElementById('coin');
 var background = document.getElementById('background');
 var block = document.getElementById('block');
 var rod = document.getElementById('rod');
@@ -32,6 +33,7 @@ var hook = new Pipe(360, -5, 80, 300, 2, rod);
 var seaweed = new Pipe(360, 480, 80, 300, 2, block);
 var background1 = new Background(0, 0, 500, 640, 2);
 var background2 = new Background(500, 0, 500, 640, 2);
+var coin1 = new Coin(500, 500, 40, 40, 2);
 
 
 document.addEventListener('keydown', function (event) {
@@ -68,6 +70,7 @@ function gameLoop() {
         seaweed.update();
         background1.update();
         background2.update();
+        coin1.update();
     }
     ctx.clearRect(0, 0, 500, 640);
     background1.draw();
@@ -75,6 +78,9 @@ function gameLoop() {
     player.draw();
     seaweed.draw();
     hook.draw();
+    if (!coin1.isHit) {
+        coin1.draw();
+    }
 
     if (isPaused) {
         drawTint(0, 0, 500, 640);

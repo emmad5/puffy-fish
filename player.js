@@ -7,6 +7,7 @@ function Fish(x, y, w, h) {
     this.ySpeed = 0;
     this.scored = false;
     this.frame = 0;
+    this.scoredCoin = false;
 }
 
 Fish.prototype.draw = function () {
@@ -33,6 +34,17 @@ Fish.prototype.update = function () {
             }
         }
     }
+    if ((this.x + (this.w)) > coin1.x && this.x < (coin1.x + coin1.w)) {
+        if (this.y + this.h >= (coin1.y) && this.y <= (coin1.y + coin1.h)) {
+            if (!this.scoredCoin) {
+                score += 2;
+                this.scoredCoin = true;
+                coin1.isHit = true;
+            }
+
+       } 
+    }
+    
     if (this.y >= 550) {
         isGameOver = true;
     }
@@ -41,6 +53,10 @@ Fish.prototype.update = function () {
     }
     if (hook.x >= 360) {
         this.scored = false;
+    }
+    if (coin1.x >= 360) {
+        this.scoredCoin = false;
+        coin1.isHit = false;
     }
     if (this.fallSpeed <= 3) {
         this.frame = 1;

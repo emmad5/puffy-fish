@@ -1,0 +1,21 @@
+function Coin(x, y, w, h, speed) {
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.speed = speed;
+    this.isHit = false
+    
+}
+
+Coin.prototype.draw = function () {
+    ctx.drawImage(coin, this.x, this.y, this.w, this.h);
+}
+
+Coin.prototype.update = function () {
+    this.x -= this.speed;
+    if (this.x + this.w <= 0) {
+        this.x = 600;
+        this.y = 320 + (Math.random() * (185 - 50) + 50);
+    }
+}
