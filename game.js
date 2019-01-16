@@ -33,7 +33,7 @@ var hook = new Pipe(360, -5, 80, 300, speed, rod);
 var seaweed = new Pipe(360, 480, 80, 300, speed, block);
 var background1 = new Background(0, 0, 500, 640, speed);
 var background2 = new Background(500, 0, 500, 640, speed);
-var coin1 = new Coin(500, 500, 40, 40, 2);
+var coin1 = new Coin(500, 500, 40, 40, speed);
 var mysound = new Audio("tynext2.mp3")
 
 
