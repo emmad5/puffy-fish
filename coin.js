@@ -16,6 +16,6 @@ Coin.prototype.update = function () {
     this.x -= this.speed;
     if (this.x + this.w <= 0) {
         this.x = 600;
-        this.y = 130 + (Math.random() * (300 + 20) + 20);
+        this.y = 140 + (Math.random() * (300 + 20) + 20);
     }
 }

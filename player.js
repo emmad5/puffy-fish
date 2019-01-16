@@ -11,13 +11,21 @@ function Fish(x, y, w, h) {
 }
 
 Fish.prototype.draw = function () {
-    var image = this.frame == 0 ? fish : fish2;
+    var image;
+    if (this.frame == 1) {
+        image = fish2;
+    } else if (this.frame == 0) {
+        image = fish;
+    } else {
+        image = fish3;
+    }
+   
     ctx.drawImage(image, this.x, this.y, this.w, this.h);
 };
 
 Fish.prototype.update = function () {
     if (isGameOver) {
-        this.fallSpeed += 0.08; 
+        this.fallSpeed += 0.06; 
     }
     else {
         this.fallSpeed += 0.2; 
@@ -60,9 +68,13 @@ Fish.prototype.update = function () {
     }
     if (this.fallSpeed <= 3) {
         this.frame = 1;
+    } else if (this.fallSpeed <= 4.6 && hook.x >= 360) {
+        this.frame = 3;
+    
     } else {
         this.frame = 0;
     }
+   
 };
 
 Fish.prototype.moveUp = function (speed) {
