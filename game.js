@@ -110,7 +110,7 @@ function gameLoop() {
         
         
     } else {       
-        drawText(score, 180, 52);
+        drawText(score, 230, 52);
     }
 
     window.requestAnimationFrame(gameLoop);

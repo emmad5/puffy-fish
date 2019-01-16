@@ -43,9 +43,9 @@ Fish.prototype.update = function () {
         }
     }
     if ((this.x + (this.w)) > coin1.x && this.x < (coin1.x + coin1.w)) {
-        if (this.y + this.h >= (coin1.y) && this.y <= (coin1.y + coin1.h)) {
+        if (this.y + this.h >= (coin1.y) && this.y <= (coin1.y + coin1.h - 10)) {
             if (!this.scoredCoin) {
-                score += 2;
+                score += 1;
                 this.scoredCoin = true;
                 coin1.isHit = true;
             }
