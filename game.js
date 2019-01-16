@@ -23,16 +23,16 @@ function drawTint(x, y, w, h) {
     ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
     ctx.fillRect(x, y, w, h);
 }
-
+var speed = 2
 var score = 0; 
 var pressed = false; 
 var isPaused = true; 
 var isGameOver = false; 
 var player = new Fish(32, 340, 80, 70);
-var hook = new Pipe(360, -5, 80, 300, 2, rod);
-var seaweed = new Pipe(360, 480, 80, 300, 2, block);
-var background1 = new Background(0, 0, 500, 640, 2);
-var background2 = new Background(500, 0, 500, 640, 2);
+var hook = new Pipe(360, -5, 80, 300, speed, rod);
+var seaweed = new Pipe(360, 480, 80, 300, speed, block);
+var background1 = new Background(0, 0, 500, 640, speed);
+var background2 = new Background(500, 0, 500, 640, speed);
 var coin1 = new Coin(500, 500, 40, 40, 2);
 var mysound = new Audio("tynext2.mp3")
 
@@ -110,7 +110,7 @@ function gameLoop() {
         
         
     } else {       
-        drawText(score, 230, 52);
+        drawText(score, 240, 52);
     }
 
     window.requestAnimationFrame(gameLoop);
