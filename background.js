@@ -12,7 +12,7 @@ Background.prototype.draw = function () {
 
 Background.prototype.update = function () {
     if (score >= 13) {
-        this.speed = 3;
+        this.speed = 4;
     } 
     if (score >= 34) {
         this.speed = 4;
