@@ -15,7 +15,7 @@ Coin.prototype.draw = function () {
 Coin.prototype.update = function () {
    
     if (score >= 34) {
-        this.speed = 6;
+        this.speed = 4;
     } else if (score >= 12) {
         this.speed = 4;
     }
