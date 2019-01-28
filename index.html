@@ -1,108 +1,109 @@
+<!DOCTYPE html>
 <html>
-<header>
-    
-    <title>Puffy Fish</title>
-    <h1>Welcome to Puffy Fish</h1>
-    <p>Watch out for seaweed and fishermen's hooks... 
-        <br/>
-        Be careful not to hit the ground or jump
-        <br />
-        out of the water.
-        <br />
-        Pick up coins along the way for extra points!
-    </p>
-    
-    <div>Press <span class='color'>space bar</span> to jump and <span class='color'>esc</span> to pause
-        <br/>
-        Press <span class='color'>E</span> to start music and <span class='color'>R</span> to pause music</div>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-    <p class='about'>About the developer: <a href="https://www.emmadeas.com">Emma Deas</a>
-    <br />
-    <a href="https://github.com/emmad5">Github</a>
-    <br/>
-    <i class="fa fa-github" aria-hidden="true"></i>
-
-    <a href="https://www.linkedin.com/in/emma-deas-49020a133/">LinkedIn</a>
-    </p>
-    <style>
-        body {
-            background: rgb(9, 71, 92);
-        }
+    <head>
+        <title>Puffy Fish</title>
+       
+        <link rel="icon" type="image/png" href="square_fish.png" />
+        <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  
+           <style>
+            body {
+                background: rgb(9, 71, 92);
+            }   
+            #game-canvas {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 32px;
+                box-shadow: 0px 0px 32px rgba(255, 255, 255, 0.5);
+            }
+            img {
+                display: none;
+            }
+            h1 {
+                color: lightblue;
+                font-family: Caveat;
+                width: 300px;
+            }
+            a {
+                color: lightblue;
+                text-decoration: none;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: 22px;
+                
+            }
+            .color {
+                color: white;
+            }
+            .about {
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                position: absolute;
+                bottom: 0;
+                right: 50px;
+            }
+            a:hover {
+                color: rgb(48, 125, 151);
+            }
+            p {
+                color: lightblue;
+                font-family: Caveat;
+                font-size: 24px;
+            } 
+            div {
+                color: lightblue;
+                font-family: Caveat;
+                font-size: 24px;
+            }   
+        </style>
         
-        #game-canvas {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 32px;
-            box-shadow: 0px 0px 32px rgba(255, 255, 255, 0.5);
-        }
-
-        img {
-            display: none;
-        }
-        h1 {
-            color: lightblue;
-            font-family: Caveat;
-            width: 300px;
-        }
-        a {
-            color: lightblue;
-            text-decoration: none;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 22px;
+        <img src="fish.png" id="fish"> 
+        <img src="coin1.png" id="coin"> 
+        <img src="fish_dead.png" id="fish3"> 
+        <img src="fish_frame_2.png" id="fish2"> 
+        <img src="background.png" id="background"> 
+        <img src="seaweed.png" id="block"> 
+        <img src="rod5.png" id="rod"> 
+    </head>
+    <body>
+            <br />
+            <h1>Welcome to Puffy Fish</h1>
+            <br />
+            <br />
+            <p>Watch out for seaweed and fishermen's hooks...
+                <br />
+                Be careful not to hit the ground or jump
+                <br />
+                out of the water.
+                <br />
+                Pick up coins along the way for extra points!
+            </p>
+            <br />
+            <br />
+            <br />
+            <div>Press <span class='color'>space bar</span> to jump and <span class='color'>esc</span> to pause
+                <br />
+                Press <span class='color'>E</span> to start music and <span class='color'>R</span> to pause music</div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <p class='about'>About the developer: <a href="https://www.emmadeas.com">Emma Deas</a>
+                <br />
+                <a href="https://github.com/emmad5">Github</a>
+                <br />
+                <i class="fa fa-github"></i>
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
             
-        }
-        .color {
-            /* color: rgba(255, 125, 78, 0.856); */
-            color: white;
-        }
-        .about {
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            position: absolute;
-            top: 0;
-            right: 50px;
-        }
-        a:hover {
-            color: rgb(48, 125, 151);
-        }
-        p {
-            color: lightblue;
-            font-family: Caveat;
-            font-size: 24px;
-            
-
-        }
-        
-        div {
-            color: lightblue;
-            font-family: Caveat;
-            font-size: 24px;
- 
-        }
-        
-    </style>
-    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
-    <img src="fish.png" id="fish"> 
-    <img src="coin1.png" id="coin"> 
-    <img src="fish_dead.png" id="fish3"> 
-    <img src="fish_frame_2.png" id="fish2"> 
-    <img src="background.png" id="background"> 
-    <img src="seaweed.png" id="block"> 
-    <img src="rod5.png" id="rod"> 
-   
-</header>
-<body>
-    <canvas width="500" height="640" id="game-canvas"></canvas>
-    <script src="player.js"></script>
-    <script src="pipe.js"></script>
-    <script src="coin.js"></script>
-    <script src="background.js"></script>
-    <script src="game.js"></script>
-
-</body> 
+                <a href="https://www.linkedin.com/in/emma-deas-49020a133/">LinkedIn</a>
+            </p>
+        <canvas width="500" height="640" id="game-canvas"></canvas>
+        <script src="player.js"></script>
+        <script src="pipe.js"></script>
+        <script src="coin.js"></script>
+        <script src="background.js"></script>
+        <script src="game.js"></script>
+    </body> 
 
 </html>
