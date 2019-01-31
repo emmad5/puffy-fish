@@ -23,7 +23,7 @@ function drawTint(x, y, w, h) {
     ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
     ctx.fillRect(x, y, w, h);
 }
-var speed = 2
+var speed = 2;
 var score = 0; 
 var pressed = false; 
 var isPaused = true; 
